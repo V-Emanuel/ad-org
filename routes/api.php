@@ -29,5 +29,4 @@ Route::prefix('static-values')->group(function (){
     Route::get('/tipos-pagamento/{id}', [StaticValuesController::class, 'getTiposPagamentoById']);
     Route::get('/tipos-investimento', [StaticValuesController::class, 'getTiposInvestimento']);
     Route::get('/tipos-investimento/{id}', [StaticValuesController::class, 'getTiposInvestimentoById']);
-
 });
