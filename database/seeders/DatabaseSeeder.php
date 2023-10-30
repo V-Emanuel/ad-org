@@ -18,5 +18,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([RpvsPagamentoSeeder::class,
+                RpvsSeeder::class,
+                StatusPagamentoSeeder::class,
+                TiposInvetimentoSeeder::class,
+                TiposPagamentosSeeder::class
+            ]);
     }
 }
