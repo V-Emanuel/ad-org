@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
                 RpvsSeeder::class,
                 StatusPagamentoSeeder::class,
                 TiposInvetimentoSeeder::class,
-                TiposPagamentosSeeder::class
+                TiposPagamentosSeeder::class,
+                StatusSaldoSeeder::class
             ]);
     }
 }

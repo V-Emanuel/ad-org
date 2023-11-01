@@ -68,4 +68,16 @@ class StaticValuesController extends Controller
         return $tipo->toArray();
     }
 
+    public function getStatusSaldo()
+    {
+        $tipos = DB::table('status_saldo')->get();
+        return $tipos->toArray();
+    }
+
+    public function getStatusSaldoById($id)
+    {
+        $tipo = DB::table('status_saldo')->where('id', $id)->get();
+        return $tipo->toArray();
+    }
+
 }

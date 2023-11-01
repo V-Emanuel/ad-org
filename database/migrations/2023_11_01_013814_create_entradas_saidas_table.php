@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('investimentos', function (Blueprint $table) {
+        Schema::create('entradas_saidas', function (Blueprint $table) {
             $table->id();
-            $table->string('corretora');
             $table->decimal('valorTotal', 10, 2);
             $table->string('observacao');
-            $table->unsignedBigInteger('tipoInvestimentoId');
-            $table->foreign('tipoInvestimentoId')->references('id')->on('tipos_investimento');
+            $table->unsignedBigInteger('statusSaldoId');
+            $table->foreign('statusSaldoId')->references('id')->on('status_saldo');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('investimentos');
+        Schema::dropIfExists('entradas_saidas');
     }
 };
