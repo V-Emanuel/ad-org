@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticValuesController;
+use App\Http\Controllers\InvestimentosController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,4 +30,13 @@ Route::prefix('static-values')->group(function (){
     Route::get('/tipos-pagamento/{id}', [StaticValuesController::class, 'getTiposPagamentoById']);
     Route::get('/tipos-investimento', [StaticValuesController::class, 'getTiposInvestimento']);
     Route::get('/tipos-investimento/{id}', [StaticValuesController::class, 'getTiposInvestimentoById']);
+    Route::get('/status-saldo', [StaticValuesController::class, 'getStatusSaldo']);
+    Route::get('/status-saldo/{id}', [StaticValuesController::class, 'getStatusSaldoById']);
+});
+
+Route::prefix('investimentos')->group(function (){
+    Route::post('/', [InvestimentosController::class, 'postInvestimentos']);
+    Route::get('/', [InvestimentosController::class, 'getInvestimentos']);
+    Route::get('/{id}', [InvestimentosController::class, 'getInvestimentoById']);
+    Route::get('/tipo/{id}', [InvestimentosController::class, 'getInvestimentoByTipoId']);
 });

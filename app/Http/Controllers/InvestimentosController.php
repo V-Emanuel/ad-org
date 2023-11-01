@@ -28,6 +28,7 @@ class InvestimentosController extends Controller
             ]);
 
             $post->save();
+
         }catch (Exception $exception){
             throw new $exception;
         }
@@ -35,15 +36,21 @@ class InvestimentosController extends Controller
 
     public function getInvestimentos(): Collection
     {
-        $atendimentos = Investimento::all();
-        return $atendimentos;
+        $investimentos = Investimento::all();
+        return $investimentos;
 
     }
 
     public function getInvestimentoById($id): Collection
     {
-        $atendimentos =Investimento::find($id);
-        return $atendimentos;
+        $investimento = Investimento::where('id', $id)->get();
+        return $investimento;
+
+    }
+    public function getInvestimentoByTipoId($tipoId): Collection
+    {
+        $investimentosTipo = Investimento::where('tipoInvestimentoId', $tipoId)->get();
+        return $investimentosTipo;
 
     }
 }
