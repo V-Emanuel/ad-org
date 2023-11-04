@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticValuesController;
 use App\Http\Controllers\InvestimentosController;
+use App\Http\Controllers\CadastroRpvController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -40,3 +41,13 @@ Route::prefix('investimentos')->group(function (){
     Route::get('/{id}', [InvestimentosController::class, 'getInvestimentoById']);
     Route::get('/tipo/{tipoId}', [InvestimentosController::class, 'getInvestimentoByTipoId']);
 });
+
+
+Route::prefix('cadastro-rpv')->group(function (){
+    Route::post('/', [CadastroRpvController::class, 'postCadastroRpv']);
+    Route::get('/', [CadastroRpvController::class, 'getCadastroRpv']);
+    Route::get('/{id}', [CadastroRpvController::class, 'getCadastroRpvById']);
+    Route::get('/rpv/{id}', [CadastroRpvController::class, 'getCadastroRpvByRpvId']);
+    Route::get('/rpv-pagamento/{id}', [CadastroRpvController::class, 'getCadastroRpvByRpvPagamentoId']);
+});
+
