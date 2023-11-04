@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticValuesController;
 use App\Http\Controllers\InvestimentosController;
 use App\Http\Controllers\CadastroRpvController;
+use App\Http\Controllers\DespesasController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -49,5 +50,14 @@ Route::prefix('cadastro-rpv')->group(function (){
     Route::get('/{id}', [CadastroRpvController::class, 'getCadastroRpvById']);
     Route::get('/rpv/{id}', [CadastroRpvController::class, 'getCadastroRpvByRpvId']);
     Route::get('/rpv-pagamento/{id}', [CadastroRpvController::class, 'getCadastroRpvByRpvPagamentoId']);
+});
+
+Route::prefix('despesas')->group(function (){
+    Route::post('/variaveis', [DespesasController::class, 'postDespesasVariaveis']);
+    Route::get('/variaveis', [DespesasController::class, 'getDespesasVariaveis']);
+    Route::get('/variaveis/{id}', [DespesasController::class, 'getDespesasVariaveisById']);
+    Route::post('/fixas', [DespesasController::class, 'postDespesasFixas']);
+    Route::get('/fixas', [DespesasController::class, 'getDespesasFixas']);
+    Route::get('/fixas/{id}', [DespesasController::class, 'getDespesasFixasById']);
 });
 
