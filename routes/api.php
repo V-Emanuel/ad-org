@@ -38,5 +38,5 @@ Route::prefix('investimentos')->group(function (){
     Route::post('/', [InvestimentosController::class, 'postInvestimentos']);
     Route::get('/', [InvestimentosController::class, 'getInvestimentos']);
     Route::get('/{id}', [InvestimentosController::class, 'getInvestimentoById']);
-    Route::get('/tipo/{id}', [InvestimentosController::class, 'getInvestimentoByTipoId']);
+    Route::get('/tipo/{tipoId}', [InvestimentosController::class, 'getInvestimentoByTipoId']);
 });
