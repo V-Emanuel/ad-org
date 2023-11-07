@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('dividas', function (Blueprint $table) {
             $table->id();
-            $table->string('corretora');
+            $table->string('nome');
             $table->decimal('valor', 10, 2);
             $table->string('observacao');
-            $table->json('transacoes');
             $table->unsignedBigInteger('statusPagamentoId');
             $table->foreign('statusPagamentoId')->references('id')->on('status_pagamento');
             $table->timestamps();
