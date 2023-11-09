@@ -17,7 +17,7 @@ class DividasController extends Controller
                 'nome' => 'required|string',
                 'valor' => 'required|decimal',
                 'observacao' => 'required|string',
-                'tipoDividasId' => 'required|integer',
+                'statusPagamentoId' => 'required|integer',
             ]);
 
             $post = new Dividas([

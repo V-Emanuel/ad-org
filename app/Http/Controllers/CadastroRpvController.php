@@ -23,9 +23,9 @@ class CadastroRpvController extends Controller
             ]);
 
             $post = new CadastroRpv([
-                'resumo' => $request->input('corretora'),
+                'resumo' => $request->input('resumo'),
                 'valor' => $request->input('valor'),
-                'observacao' => $request->input('corretora'),
+                'observacao' => $request->input('observacao'),
                 'conteudo' => $request->input('conteudo'),
                 'rpvId' => $request->input('rpvId'),
                 'rpvPagamentoId' => $request->input('rpvPagamentoId'),

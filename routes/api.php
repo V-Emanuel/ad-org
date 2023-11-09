@@ -7,6 +7,7 @@ use App\Http\Controllers\InvestimentosController;
 use App\Http\Controllers\CadastroRpvController;
 use App\Http\Controllers\DespesasController;
 use App\Http\Controllers\DividasController;
+use App\Http\Controllers\EntradasSaidasController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -67,6 +68,12 @@ Route::prefix('dividas')->group(function (){
     Route::get('/', [DividasController::class, 'getDividas']);
     Route::get('/{id}', [DividasController::class, 'getDividasById']);
     Route::get('/status/{id}', [DividasController::class, 'getDividasByStatusId']);
+});
 
+Route::prefix('transacoes')->group(function (){
+    Route::post('/', [EntradasSaidasController::class, 'postEntradasSaidas']);
+    Route::get('/', [EntradasSaidasController::class, 'getEntradasSaidas']);
+    Route::get('/{id}', [EntradasSaidasController::class, 'getEntradasSaidasById']);
+    Route::get('/{statusSaldoId}', [EntradasSaidasController::class, 'getEntradasSaidasByStatusSaldoId']);
 });
 

@@ -25,7 +25,7 @@ class DespesasController extends Controller
             $post = new DespesasVariaveis([
                 'resumo' => $request->input('corretora'),
                 'valor' => $request->input('valor'),
-                'observacao' => $request->input('corretora'),
+                'observacao' => $request->input( 'observacao'),
                 'balanco' => $request->input('balanco'),
                 'tipoPagamentoId' => $request->input( 'tipoPagamentoId'),
             ]);
